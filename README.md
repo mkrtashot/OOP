@@ -113,3 +113,44 @@ The play method should not add an invalid word to the words array.
 You don't need to worry about capitalization or white spaces for the inputs for the play method. There will only be single inputs for the play method.
 
 Here is the [solution](2.Shiritori.js)
+
+---
+
+## Author-Book
+
+Create an Author class and a Book
+
+Author should have:
+
+- fields
+- class
+- name
+- email
+- gender
+- for fields methods getters
+- toString()
+
+Book should have:
+
+- fields
+- title
+- author(Author)
+- price
+- quantity
+
+- methods for fields getters and setters
+- getProfit() - which calculates the profit from the book based on the
+- price and quantity.
+- toString()
+
+### Example
+
+```Javascript
+let author1 = new Author("J. K. Rowling", "abc@gmail.com", "fEmaLe");
+console.log(author1.gender); // female
+console.log(author1.name); // J. K. Rowling
+console.log(author1.toString()); // Ms. J. K. Rowling
+author.name = 12; // throws error
+```
+
+Here is the [solution](3.AuthorBook.js)
