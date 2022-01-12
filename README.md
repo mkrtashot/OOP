@@ -1,6 +1,6 @@
 # Tasks
 
-## CoffeeShop
+## TASK 1 - CoffeeShop
 
 ### Properties:
 
@@ -57,7 +57,7 @@ Here is the [solution](1.CoffeeShop.js)
 
 ---
 
-## Shiritori
+## TASK 2 - Shiritori
 
 This challenge is an English twist on the Japanese word game Shiritori. The basic premise is to follow two rules:
 
@@ -116,7 +116,7 @@ Here is the [solution](2.Shiritori.js)
 
 ---
 
-## Author-Book
+## TASK 3 - Author-Book
 
 Create an Author class and a Book
 
@@ -154,3 +154,46 @@ author.name = 12; // throws error
 ```
 
 Here is the [solution](3.AuthorBook.js)
+
+---
+
+## TASK 4 - Account
+
+Create an Account class.
+Account should have:
+
+- fields
+- id
+- name
+- balance
+- for fields getters, setters - for name and balance
+- credit(amount) - which should add amount to balance and return the updated balance.
+- debit(amount) - which should subtract the amount from the balance, if amount is less than the balance, otherwise output “Amount exceeded balance.”
+- transferTo(anotherAccount, amount) - which should subtract the amount from the account balance and add it to the given anotherAccount and return the updated balance, if amount is less than the balance, otherwise output “Amount exceeded balance.”
+- static method: identifyAccounts(accountFirst, accountSecond) - which gets two accounts and identifies if they are the same or not comparing all fields.
+- toString()
+
+### Example
+
+```javascript
+let savingAcc = new Account("Saving account", 2000);
+let cardAcc = new Account("Card account", 1000);
+console.log(savingAcc); // Account { id: 0, _name: 'Saving account',
+_balance: 2000 }
+console.log(cardAcc); // Account { id: 1, _name: 'Card account', _balance:
+1000 }
+console.log(savingAcc.balance); // 2000
+console.log(savingAcc.credit(400)); // 2400
+console.log(savingAcc.balance); // 2400
+console.log(savingAcc.debit(9000)); //6600
+console.log(savingAcc.transferTo(cardAcc, 1000)); // 1400
+console.log(savingAcc.balance); // 1400
+console.log(cardAcc.balance); // 2000
+let anotherAcc = savingAcc;
+console.log(Account.identifyAccounts(savingAcc, anotherAcc)); // true
+console.log(Account.identifyAccounts(savingAcc, cardAcc)); // false
+console.log(savingAcc.toString()); // Saving account's account balance is
+$1400.
+```
+
+Here is the [solution](4.Account.js)
