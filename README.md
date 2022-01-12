@@ -197,3 +197,50 @@ $1400.
 ```
 
 Here is the [solution](4.Account.js)
+___
+
+### Person - Student
+
+Write classes: 
+Person class and Student class. 
+Person should have:
+- fields
+- firstName
+- lastName
+- gender
+- age
+#### methods
+- for fields setters 
+- for fields getters
+- toString()
+```javascript
+let user1 = new Person("Name", "Surname", "female", 23);
+console.log(user1.toString()); // Name Surname, 23 years old.
+```
+Student is inherited from Person. 
+It should have fields
+- year
+- fee
+- program(array of { programName, grade })
+#### methods
+- for fields setters 
+- for fields getters
+- passExam(programName, grade)
+- isAllPassed()
+- toString()
+
+Program should contain the data about its programs and exams.
+passExam will update that data, so if student passed all the exams(grade
+to 50 is great or equal) , its year should be increased by one.
+
+It should have a method isAllPassed().
+
+Example of program array:
+```javascript
+[
+{ programName: "math", grade: 10 },
+{ programName: "english", grade: undefined },
+];
+```
+
+Here is the [solution](5.PersonStudent.js)
