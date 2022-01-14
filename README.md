@@ -208,7 +208,7 @@ Here is the [solution](4.Account.js)
 
 ---
 
-## Task 6 - Person - Student
+## Task 5 - Person - Student
 
 Write classes:
 Person class and Student class.
@@ -266,7 +266,7 @@ Here is the [solution](5.PersonStudent.js)
 
 ---
 
-## Library - Book
+## Task 6 - Library - Book
 
 Describe a model of a library. For that define classes:
 
