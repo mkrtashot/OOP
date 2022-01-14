@@ -122,7 +122,8 @@ Create an Author class and a Book
 
 Author should have:
 
-- fields
+fields
+
 - class
 - name
 - email
@@ -132,13 +133,16 @@ Author should have:
 
 Book should have:
 
-- fields
+fields
+
 - title
 - author(Author)
 - price
 - quantity
 
-- methods for fields getters and setters
+methods
+
+- for fields getters and setters
 - getProfit() - which calculates the profit from the book based on the
 - price and quantity.
 - toString()
@@ -162,11 +166,15 @@ Here is the [solution](3.AuthorBook.js)
 Create an Account class.
 Account should have:
 
-- fields
+fields
+
 - id
 - name
 - balance
-- for fields getters, setters - for name and balance
+
+for fields
+
+- getters, setters - for name and balance
 - credit(amount) - which should add amount to balance and return the updated balance.
 - debit(amount) - which should subtract the amount from the balance, if amount is less than the balance, otherwise output “Amount exceeded balance.”
 - transferTo(anotherAccount, amount) - which should subtract the amount from the account balance and add it to the given anotherAccount and return the updated balance, if amount is less than the balance, otherwise output “Amount exceeded balance.”
@@ -197,33 +205,43 @@ $1400.
 ```
 
 Here is the [solution](4.Account.js)
-___
+
+---
 
 ### Person - Student
 
-Write classes: 
-Person class and Student class. 
+Write classes:
+Person class and Student class.
 Person should have:
-- fields
+
+fields
+
 - firstName
 - lastName
 - gender
 - age
-#### methods
-- for fields setters 
+
+methods
+
+- for fields setters
 - for fields getters
 - toString()
+
 ```javascript
 let user1 = new Person("Name", "Surname", "female", 23);
 console.log(user1.toString()); // Name Surname, 23 years old.
 ```
-Student is inherited from Person. 
+
+Student is inherited from Person.
 It should have fields
+
 - year
 - fee
 - program(array of { programName, grade })
+
 #### methods
-- for fields setters 
+
+- for fields setters
 - for fields getters
 - passExam(programName, grade)
 - isAllPassed()
@@ -236,11 +254,119 @@ to 50 is great or equal) , its year should be increased by one.
 It should have a method isAllPassed().
 
 Example of program array:
+
 ```javascript
 [
-{ programName: "math", grade: 10 },
-{ programName: "english", grade: undefined },
+	{ programName: "math", grade: 10 },
+	{ programName: "english", grade: undefined },
 ];
 ```
 
 Here is the [solution](5.PersonStudent.js)
+
+---
+
+## Library - Book
+
+Describe a model of a library. For that define classes:
+
+- Library
+- Reader
+- Book.
+
+To create correct hierarchies and connections, you should have a subclasses of Book such as
+
+- LibraryBookBase,
+- LibraryBook,
+- ReaderBook.
+
+### Book should have
+
+fields
+
+- title string
+- author string
+
+methods
+
+- getters for fields
+- toString() - which returns true if the book title and author is the same with the current instance, false, otherwise.
+
+### LibraryBookBase should have
+
+fields
+
+- title - string
+- author - string
+- bookId - number
+
+methods
+
+- getters for fields
+- isTheSameBook(book)
+- toString()
+
+### LibraryBook fields should have
+
+- string
+- author - string
+- bookId - number
+- quantity - number
+
+methods
+
+- getters for fields
+- setters for appropriate fields
+- title
+- toString()
+- increaseQuantityBy(amount - number)- increases the quantity of the book by the given amount.
+- decreaseQuantityBy(amount - number)- decrease the quantity of the book by the given amount.
+
+### ReaderBook should have
+
+fields
+
+- title - string
+- author - string
+- bookId - number
+- string
+- isReturned - boolean
+
+methods should have fields
+
+- getters for fields
+- setters for appropriate fields
+- expirationDate
+- toString()
+
+### Reader
+
+- firstName
+- string
+- readerId - number
+- books - Array of ReaderBook
+
+methods
+
+- getters for fields
+- setters for appropriate fields
+- lastName
+- toString()
+- requests a book from the library -If returned book is not a null and is a type of ReaderBook, pushes it to the books.
+
+### Library should have
+
+- fields
+- books - Array of LibraryBook
+- readers - Array of Readers
+
+methods
+
+- getters for fields
+- doHaveBook(requestedBook - Book) - returns true if library has the book, false otherwise.
+- addBook(newBook - Book) - add new book to the library. If the book already exists, increases its quantity, otherwise adds new book of type LibraryBook.
+- addBooks(newBooks) - add new books to the library with the same logic as the addBook. Returns changed array of the books.
+- checkReaderId(readerId) - returns true if there exist a reader with the given id, otherwise returns false.
+- lendBook(book - Book, readeId) - checks whether the book exists and there is at least one at the library. Checks whether library has a reader with the given id. If the both are true, returns a book of type ReaderBook.
+
+Here is the[solution](6.LibraryBook.js)
