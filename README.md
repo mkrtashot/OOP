@@ -208,7 +208,7 @@ Here is the [solution](4.Account.js)
 
 ---
 
-### Person - Student
+## Task 6 - Person - Student
 
 Write classes:
 Person class and Student class.
@@ -369,4 +369,4 @@ methods
 - checkReaderId(readerId) - returns true if there exist a reader with the given id, otherwise returns false.
 - lendBook(book - Book, readeId) - checks whether the book exists and there is at least one at the library. Checks whether library has a reader with the given id. If the both are true, returns a book of type ReaderBook.
 
-Here is the[solution](6.LibraryBook.js)
+Here is the [solution](6.LibraryBook.js)
