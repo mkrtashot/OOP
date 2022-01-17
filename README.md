@@ -42,8 +42,6 @@ tcs.fulfillOrder(); // "All orders have been fulfilled!"
 tcs.listOrders(); // []
 // an empty array is returned if all orders have been exhausted
 tcs.dueAmount(); // 0.0
-1/4Class.Tasks.md
-1/11/2022
 // no new orders taken, expect a zero payable
 tcs.cheapestItem(); // "lemonade"
 tcs.drinksOnly(); // ["orange juice", "lemonade", "cranberry juice",
@@ -93,8 +91,6 @@ myShiritori = new Shiritory();
 myShiritori.play("apple"); // ["apple"]
 myShiritori.play("ear"); // ["apple", "ear"]
 myShiritori.play("rhino"); // ["apple", "ear", "rhino"]
-2/4Class.Tasks.md
-1/11/2022
 myShiritori.play("corn"); // "game over"
 // Corn does not start with an "o".
 myShiritori.words; // ["apple", "ear", "rhino"]
@@ -188,8 +184,7 @@ let savingAcc = new Account("Saving account", 2000);
 let cardAcc = new Account("Card account", 1000);
 console.log(savingAcc); // Account { id: 0, _name: 'Saving account',
 _balance: 2000 }
-console.log(cardAcc); // Account { id: 1, _name: 'Card account', _balance:
-1000 }
+console.log(cardAcc); // Account { id: 1, _name: 'Card account', _balance: 1000 }
 console.log(savingAcc.balance); // 2000
 console.log(savingAcc.credit(400)); // 2400
 console.log(savingAcc.balance); // 2400
