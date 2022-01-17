@@ -365,3 +365,27 @@ methods
 - lendBook(book - Book, readeId) - checks whether the book exists and there is at least one at the library. Checks whether library has a reader with the given id. If the both are true, returns a book of type ReaderBook.
 
 Here is the [solution](6.LibraryBook.js)
+
+---
+
+## Task 7 - CustomConsole Class
+
+Create a CustomConsole class with following methods:
+
+- log function that takes user arguments and returns them as a string,
+- history function that takes an optional range as an argument,
+- clearHistory function to remove the history memory.
+
+The log function has no limit of arguments.
+
+```javascript
+const myConsole = new Console("Regular");
+const fancyConsole = new Console("Fancy");
+myConsole.log([0, 1, 2, 3]); // "Regular: [0,1,2,3]"
+fancyConsole.log({ a: 1, b: 2 }); // "Fancy: {a:1, b:2}"
+myConsole.log("ok : ", 1, 2, 3); // "ok : 1, 2, 3"
+myConsole.clearHistory(); // true
+myConsole.history(); // ""
+```
+
+Here is the [solution](7.ConsoleLog.js)
