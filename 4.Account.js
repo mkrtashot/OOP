@@ -1,7 +1,7 @@
 "use strict";
 
-let idnum = 0;
 class Account {
+	static idnum1 = 0;
 	static identifyAccounts(accountFirst, accountSecond) {
 		if (accountFirst === accountSecond) {
 			return true;
@@ -9,7 +9,7 @@ class Account {
 		return false;
 	}
 	constructor(name, balance) {
-		this.id = idnum++;
+		this.id = Account.idnum1++;
 		this.name = name;
 		this.balance = balance;
 	}
@@ -56,6 +56,11 @@ class Account {
 		return `${this.name}'s account ID is ${this.id}. The balance is ${this.balance}`;
 	}
 }
+
+let user1 = new Account("Ashot", 1000);
+
+console.log(user1.credit(1000));
+console.log(user1.debit(500));
 
 let savingAcc = new Account("Saving account", 2000);
 let cardAcc = new Account("Card account", 1000);
